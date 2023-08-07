@@ -10,7 +10,16 @@ let currentDate = null;
 
 const calendar = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('[data-start]');
+const timerEl = document.querySelector(".timer");
+
 startBtn.disabled = true;
+
+
+
+timerEl.style.display = "flex";
+timerEl.style.paddingTop = "30px";
+timerEl.style.gap = "50px";
+
 
 
 
@@ -79,7 +88,9 @@ const timer = {
       this.rootSelector.querySelector('[data-seconds]').textContent =
         this.addLeadingZero(seconds);
     }, TIMER_DELAY);
+   
   },
+ 
 
   stop() {
     clearInterval(intervalId);
